@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    container_name: llm_chatbot_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=production
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: llm_chatbot_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://backend:8000  # Changed to use service name
+    depends_on:
+      - backend
+    restart: always
