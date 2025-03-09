@@ -1,4 +1,4 @@
-# Scalable LLM Chatbot
+# LLM Chatbot
 
 This project is a scalable chatbot system built using a large language model (LLM). It is designed to handle over **10,000 concurrent users** by leveraging a microservices architecture with Docker-based deployment.
 
